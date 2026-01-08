@@ -1,4 +1,4 @@
-# React + Vite
+# Este es el espacio de trabajo para Fullstack
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
