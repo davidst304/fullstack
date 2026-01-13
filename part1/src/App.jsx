@@ -1,100 +1,43 @@
 const App = () => {
-  return (
-    <div>
 
-      <Hola />
-      <br />
-      <Fecha />
-      <br />
-      <Hello name= ""/>
-      <br />
-      <p>Cuadro drag and drop</p>
-      <br />
-      <Boton nombre = "TOTAL" />
-      <br />
-      <Amigos />
-      <br />
-      <Tabla />
-
-    </div>
-  )
-}
-
-// CREACIÓN DEL TITULO DE PRUEBA
-const Hola = () => {
-  return (
-    <h1> TITULO DE PRUEBA</h1>
-  )
-}
-
-// CREACIÓN DEL TITULO CON VARIABLES
-const Fecha = () => {
-  const fecha = new Date()
-  console.log("fecha insertada")
-
-  return (
-
-    <h1>PRUEBA {fecha.toString()} </h1>
-
-  )
-}
-
-// USAR PROPS
-const Hello = (props) => {
-  return (
-    <div>
-
-      <h2>HOLA {props.name}</h2>
-
-    </div>
-  )
-}
-
-const Boton = (rest) => {
-  return (
-    <button> ENVIAR {rest.nombre} </button>
-
-  )
-  console.log("boton insertado")
-}
-
-const Amigos = () => {
-  const friends = [
-    { name: 'Peter', age: 4 },
-    { name: 'Maya', age: 10 },
-    { name: 'alfon', age: 50 },
-  ]
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
   return (
     <div>
-      <p>{friends[0].name} {friends[0].age}</p>
-      <p>{friends[1].name} {friends[1].age}</p>
-      <p>{friends[2].name} {friends[2].age}</p>
+      <Header course={course} />
+      <Content part1={part1} part2={part2} part3={part3} exercises1={exercises1} exercises2={exercises2} exercises3={exercises3} />
+      <Total exercises1={exercises1} exercises2={exercises2} exercises3={exercises3} />
     </div>
   )
-}
+};
 
-const Tabla = () => {
+const Header = (props) => {
   return (
-    <table>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-      </tr>
-      <tr>
-        <td>Peter</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>Maya</td>
-        <td>10</td>
-      </tr>
-      <tr>
-        <td>Alfon</td>
-        <td>50</td>
-      </tr>
-    </table>
+    <h1>{props.course} </h1>
   )
-}
+};
+
+const Content = (props) => {
+  return (
+    <div>
+      <p> nombre = {props.part1} Volumen: {props.exercises1} </p>
+      <p> nombre = {props.part2} Volumen: {props.exercises2} </p>
+      <p> nombre = {props.part3} Volumen: {props.exercises3} </p>
+    </div>
+  )
+};
+
+const Total = (props) => {
+  return (
+    <p><strong>Total exercises: {props.exercises1 + props.exercises2 + props.exercises3} </strong></p>
+  )
+};
+
 
 export default App
