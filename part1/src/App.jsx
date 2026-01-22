@@ -39,5 +39,9 @@ const Total = (props) => {
   )
 };
 
+// PARTE DE JAVASCRIPT
+// Asiganción de de una variable fija
+const nombre = "David";
+console.log("Nombre:", nombre);
 
 export default App
